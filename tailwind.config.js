@@ -7,7 +7,11 @@ module.exports = {
     './layouts/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        background: 'rgb(15, 22, 36)',
+      },
+    },
   },
   plugins: [],
 };
