@@ -78,7 +78,7 @@ export default function Home() {
           Raihan Yudo <br /> Saputra
         </h1>
         <h2 className="mb-4 text-3xl font-bold">
-          I'm a{' '}
+          I&apos;m a{' '}
           <span className="inline-block">
             <span className="inline-flex text-transparent bg-gradient-to-r bg-clip-text from-purple-700 to-blue-700">
               Full-stack Engineer <br />
