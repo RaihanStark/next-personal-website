@@ -13,15 +13,23 @@ const NavigationBar: FC = () => {
   };
 
   return (
-    <div className="bg-[#0000006b] fixed top-0 left-0 w-full z-50">
+    <div
+      className={classNames(
+        'bg-[#0000006b] md:bg-[#0000006b] fixed top-0 left-0 w-full z-50',
+        {
+          'bg-black': isNavigationOpen,
+        }
+      )}
+    >
       <Container>
         <div className="flex gap-6 items-center p-7">
           <div className="text-xl grow font-bold">Raihan Saputra</div>
           <ul
             className={classNames(
-              'bg-[#0000006b] grow flex flex-col fixed top-[88px] left-0 pb-5 text-center gap-6 w-full md:flex md:w-fit md:flex-row md:gap-12 md:static md:pb-0',
+              'md:bg-transparent grow flex flex-col fixed top-[88px] left-0 pb-5 text-center gap-6 w-full md:flex md:w-fit md:flex-row md:gap-12 md:static md:pb-0',
               {
                 hidden: !isNavigationOpen,
+                'bg-black': isNavigationOpen,
               }
             )}
           >
@@ -38,7 +46,15 @@ const NavigationBar: FC = () => {
               Contact
             </li>
           </ul>
-          <ul className="gap-4 items-center hidden md:flex">
+          <ul
+            className={classNames(
+              'md:bg-transparent w-full absolute flex left-0 top-[276px] justify-center pb-5 gap-4 items-center md:flex md:static md:w-fit md:pb-0',
+              {
+                hidden: !isNavigationOpen,
+                'bg-black': isNavigationOpen,
+              }
+            )}
+          >
             <li className="text-gray-200 hover:text-white cursor-pointer">
               <svg
                 stroke="currentColor"
