@@ -2,6 +2,8 @@ import classNames from 'classnames';
 import type { FC } from 'react';
 import { useState } from 'react';
 
+import { navigationBar } from '@/lib/constant/menu';
+
 import Container from '../Container';
 import NavigationHamburger from './Hamburger';
 
@@ -10,6 +12,19 @@ const NavigationBar: FC = () => {
 
   const handleNavigation = () => {
     setIsNavigationOpen(!isNavigationOpen);
+  };
+
+  const renderMenu = () => {
+    return navigationBar.map((item) => {
+      return (
+        <li
+          className="cursor-pointer text-gray-200 hover:text-white"
+          key={item.name}
+        >
+          {item.name}
+        </li>
+      );
+    });
   };
 
   return (
@@ -33,18 +48,7 @@ const NavigationBar: FC = () => {
               }
             )}
           >
-            <li className="cursor-pointer text-gray-200 hover:text-white">
-              Introduction
-            </li>
-            <li className="cursor-pointer text-gray-200 hover:text-white">
-              Technology
-            </li>
-            <li className="cursor-pointer text-gray-200 hover:text-white">
-              Works
-            </li>
-            <li className="cursor-pointer text-gray-200 hover:text-white">
-              Contact
-            </li>
+            {renderMenu()}
           </ul>
           <ul
             className={classNames(
